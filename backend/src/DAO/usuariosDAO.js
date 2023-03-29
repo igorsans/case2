@@ -29,6 +29,20 @@ class UsuariosDAO {
       status: 201,
     };
   }
+  static async deletar(param){
+    try {
+      await database.query("DELETE FROM usuarios WHERE email = ?", param)
+    } catch (error) {
+      return {
+        dados: { msg: "MySql error", error: error.code },
+        status: 500,
+      };
+    }
+    return {
+      dados: { msg: "usuario deletado com sucesso na tabela usuarios" },
+      status: 200,
+    };
+  }
 }
 
 export default UsuariosDAO;

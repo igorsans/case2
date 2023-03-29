@@ -15,10 +15,10 @@ const usuariosController = (app) => {
     const resposta = await UsuariosDAO.inserir(modelado)
     res.status(resposta.status).send(resposta.dados);
   });
-  // app.delete("/usuarios/email/:email", (req, res) => {
-  //   const resposta = usuariosModel.deletar(req.params.email)
-  //   res.status(resposta.status).send(resposta.dados)
-  //});
+  app.delete("/usuarios/email/:email", async (req, res) => {
+    const resposta = await UsuariosDAO.deletar(req.params.email)
+    res.status(resposta.status).send(resposta.dados)
+  });
 };
 
 export default usuariosController;
