@@ -13,14 +13,14 @@ const useForm = (propsDoForm) => {
       });
     },
     clearform() {
-      setValues({ id: "", nome: "", email: "", sobrenome : "" });
+      setValues({ id: "", nome: "", email: "" });
     },
   };
 };
 
 const CadastrarUsuarios = () => {
   const formCadastro = useForm({
-    initialValues: { id: "", nome: "", email: "", sobrenome : "" },
+    initialValues: { id: "", nome: "", email: "" },
   });
   return (
     <div>
@@ -49,12 +49,6 @@ const CadastrarUsuarios = () => {
           placeholder="Email do usuario"
           name="email"
           value={formCadastro.values.email}
-          onChange={formCadastro.handleChange}
-        />
-        <input
-          placeholder="Sobrenome do usuario"
-          name="sobrenome"
-          value={formCadastro.values.sobrenome}
           onChange={formCadastro.handleChange}
         />
         <button>Cadastrar</button>

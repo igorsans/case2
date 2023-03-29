@@ -14,5 +14,5 @@ const api = axios.create({
     await api.post("/usuarios", obj)
   }
   export async function deleteUsuarios(parametro) {
-    await api.delete(`/usuarios/id/${parametro}`)
+    await api.delete(`/usuarios/email/${parametro}`)
   }
