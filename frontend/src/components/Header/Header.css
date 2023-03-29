@@ -1,0 +1,21 @@
+.header {
+    height: 70px;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lista{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    font-size: 1.3em;
+    list-style-type: none;
+}
+li{
+    text-decoration: none;
+}
+li :visited{
+    text-decoration: none;
+    color: black;
+}
