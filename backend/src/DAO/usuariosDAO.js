@@ -9,7 +9,10 @@ class UsuariosDAO {
     };
   }
   static async mostrarUm(param) {
-    const dadosbd = await database.query(`SELECT * FROM usuarios WHERE email = ?`, param);
+    const dadosbd = await database.query(
+      `SELECT * FROM usuarios WHERE email = ?`,
+      param
+    );
     return {
       dados: { msg: dadosbd },
       status: 200,
@@ -17,7 +20,10 @@ class UsuariosDAO {
   }
   static async inserir(obj) {
     try {
-      await database.query("INSERT INTO usuarios (idusuarios, nome, email) VALUES (?,?,?)", Object.values(obj));
+      await database.query(
+        "INSERT INTO usuarios (idusuarios, nome, email) VALUES (?,?,?)",
+        Object.values(obj)
+      );
     } catch (error) {
       return {
         dados: { msg: "MySql error", error: error.code },
@@ -29,9 +35,9 @@ class UsuariosDAO {
       status: 201,
     };
   }
-  static async deletar(param){
+  static async deletar(param) {
     try {
-      await database.query("DELETE FROM usuarios WHERE email = ?", param)
+      await database.query("DELETE FROM usuarios WHERE email = ?", param);
     } catch (error) {
       return {
         dados: { msg: "MySql error", error: error.code },
@@ -40,6 +46,23 @@ class UsuariosDAO {
     }
     return {
       dados: { msg: "usuario deletado com sucesso na tabela usuarios" },
+      status: 200,
+    };
+  }
+  static async atualizar(param, obj) {
+    try {
+      await database.query(
+        "UPDATE usuarios SET idusuarios = ? , nome = ?, email = ? WHERE idusuarios = ?",
+        [...Object.values(obj), param]
+      );
+    } catch (error) {
+      return {
+        dados: { msg: "MySql error", error: error.code },
+        status: 500,
+      };
+    }
+    return {
+      dados: { msg: "usuario atualizado com sucesso na tabela usuarios" },
       status: 200,
     };
   }

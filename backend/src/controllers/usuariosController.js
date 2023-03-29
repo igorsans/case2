@@ -19,6 +19,10 @@ const usuariosController = (app) => {
     const resposta = await UsuariosDAO.deletar(req.params.email)
     res.status(resposta.status).send(resposta.dados)
   });
+  app.put("/usuarios/id/:id", async (req, res) => {
+    const resposta = await UsuariosDAO.atualizar(req.params.id, req.body)
+    res.status(resposta.status).send(resposta.dados)
+  })
 };
 
 export default usuariosController;
