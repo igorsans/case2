@@ -1,0 +1,8 @@
+.pageUsuarios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cardUsuarios{
+    display: flex;
+}
