@@ -1,4 +1,24 @@
 *{
   margin: 0;
   padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+form {
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 40%;
+  gap: 20px;
+}
+input{
+  height: 40px;
+  text-align: center;
+  border-radius: 7px;
+  font-size: 1.4em;
+}
+button{
+  height: 40px;
+  font-size: 1.4em;
+  border-radius: 7px;
 }

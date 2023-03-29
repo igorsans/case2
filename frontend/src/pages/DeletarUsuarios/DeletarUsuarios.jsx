@@ -24,16 +24,8 @@ const DeletarUsuarios = () => {
 
   return (
     <div>
-      <form>
-        <input
-          placeholder="email do usuario"
-          name="email"
-          value={formCadastro.values.email}
-          onChange={formCadastro.handleChange}
-        />
-      </form>
-      <button
-        onClick={(e) => {
+      <form
+        onSubmit={(e) => {
           e.preventDefault();
           console.log(formCadastro.values);
           formCadastro.clearform();
@@ -41,8 +33,14 @@ const DeletarUsuarios = () => {
           alert("usuario Deletado");
         }}
       >
-        Deletar
-      </button>
+        <input
+          placeholder="email do usuario"
+          name="email"
+          value={formCadastro.values.email}
+          onChange={formCadastro.handleChange}
+        />
+        <button>Deletar</button>
+      </form>
     </div>
   );
 };

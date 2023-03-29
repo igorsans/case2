@@ -6,7 +6,6 @@ function App() {
 
   return (
     <div>
-      {/* <button onClick={getUsuarios}>Get Usuarios</button> */}
       <Rotas/>
     </div>
   )
